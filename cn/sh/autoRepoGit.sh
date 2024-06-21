@@ -21,7 +21,7 @@ RCOPY_PATH="$DL_PATH/mirrors-repolist/cn/repolists/$Barce_VER"
 SERVICE="autoRepoGit"
 #$REPO_DIR 就是 /etc/yum.repos.d/目录
 REPO_DIR="/etc/yum.repos.d"
-BACK_DIR="$HOME/backupcd"
+BACK_DIR=" $HOME/backup"
  
 
 ME=`whoami`
@@ -55,8 +55,8 @@ install_unit() {
     # 安装脚本到系统目录下
     # 默认脚本路径在 ./mirrors-repolist/sh/autoRepoGit.sh
     mkdir -p $HOME/downloads
-    mkdir -p $HOME/backupcd 
-    touch $HOME/backupcd/logs.txt 
+    mkdir -p  $HOME/backup 
+    touch  $HOME/backup/logs.txt 
     cd $HOME/downloads/mirrors-repolist/cn/sh/ 
 
    cp -r  ./autoRepoGit.sh /usr/bin/autoRepoGit 
