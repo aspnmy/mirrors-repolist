@@ -16,8 +16,8 @@ SCNAME="autoRepoGit"
 # $Barce_VER 代表git目录中需要下载的repo文件的类别路径，用变量就方便进行路径切换，这里假设拉取阿里云-centos-9-stream的repo文件
 Barce_VER="aliyun/centos/9-stream"
 DL_PATH="$HOME/downloads"
-#$HOME/downloads/mirrors-repolist/mirrors-repolists-master
-RCOPY_PATH="$DL_PATH/mirrors-repolist/mirrors-repolists-master/mirrors-repolist/$Barce_VER"
+#$HOME/downloads/mirrors-repolist/cn/repolists/aliyun/centos/9-stream/*.repo
+RCOPY_PATH="$DL_PATH/mirrors-repolist/cn/repolists/$Barce_VER"
 SERVICE="autoRepoGit"
 #$REPO_DIR 就是 /etc/yum.repos.d/目录
 REPO_DIR="/etc/yum.repos.d"
@@ -39,9 +39,10 @@ startOnce() {
    echo $RCOPY_PATH
     rm -rf $DL_PATH/*
     cd $DL_PATH
-    #git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git
-    #cp -r $RCOPY_PATH/*.repo $REPO_DIR
-    #dnf makecache
+    git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git
+    #cp -r $HOME/downloads/mirrors-repolist/mirrors-repolists-master/mirrors-repolist/aliyun/centos/9-stream/*.repo /etc/yum.repos.d
+    cp -r $RCOPY_PATH/*.repo $REPO_DIR
+    dnf makecache
    exit
 }
  
