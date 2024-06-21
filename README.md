@@ -1,7 +1,7 @@
 #[TOC]
 # 如何优雅的换国内源？
 - 由于国内源的一些历史问题，所以有时候经常会出现换源异常问题，所以这个项目存在的意义就是，缓存一批常用的repo国内源，定期更新，使用很easy，只需要git下来，挪到指定区域即可。
-
+# 更新时间：20240622 Msg：更新自动脚本工具
 # 使用说明
 - 1、首先下载项目
 ```bash
@@ -48,12 +48,13 @@ autoRepoGit set_crontab
 
 - 主要保存一些常用镜像源的repo文件，方便快速换源
 - 使用wget命令下载的对应区域即可
-    mirrors-repolist
-        └─aliyun
-            └─centos
-                ├─10-stream
-                ├─8-stream
-                └─9-stream
+├─mirrors-repolist
+│  └─aliyun
+│      └─centos
+│          ├─10-stream
+│          ├─8-stream
+│          └─9-stream
+└─sh
 
 ```
 cd /etc/yum.repos.d
