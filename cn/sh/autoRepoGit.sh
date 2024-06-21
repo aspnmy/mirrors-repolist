@@ -36,12 +36,11 @@ startOnce() {
        echo "$SERVICE is Succeed!"
        exit
    fi
-   echo $RCOPY_PATH
-    rm -rf $DL_PATH/*
-    cd $DL_PATH
-    git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git
-    #cp -r $HOME/downloads/mirrors-repolist/mirrors-repolists-master/mirrors-repolist/aliyun/centos/9-stream/*.repo /etc/yum.repos.d
-    cp -r $RCOPY_PATH/*.repo $REPO_DIR
+   echo $RCOPY_PATH >>logs.txt
+    rm -rf $DL_PATH/* >>logs.txt
+    cd $DL_PATH >>logs.txt
+    git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git >>logs.txt
+    cp -r $RCOPY_PATH/*.repo $REPO_DIR >>logs.txt
     dnf makecache
    exit
 }
@@ -63,14 +62,15 @@ install_unit() {
     # 默认脚本路径在 ./mirrors-repolist/sh/autoRepoGit.sh
     mkdir -p $HOME/downloads
     mkdir -p $HOME/backupcd 
-    cd $HOME/downloads/mirrors-repolist/mirrors-repolists-master/sh/
+    touch $HOME/backupcd/logs.txt >>logs.txt
+    cd $HOME/downloads/mirrors-repolist/mirrors-repolists-master/sh/ >>logs.txt
 
-   cp -r  ./autoRepoGit.sh /usr/bin/autoRepoGit
-   chmod +x /usr/bin/autoRepoGit
-   dnf -y install crontabs
-   systemctl enable crond
-   systemctl start crond
-   echo "$SERVICE is Succeed!"
+   cp -r  ./autoRepoGit.sh /usr/bin/autoRepoGit >>logs.txt
+   chmod +x /usr/bin/autoRepoGit >>logs.txt
+   dnf -y install crontabs >>logs.txt
+   systemctl enable crond  >>logs.txt
+   systemctl start crond >>logs.txt
+   echo "$SERVICE is Succeed!" >>logs.txt
    exit
 }
 
