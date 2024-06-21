@@ -35,7 +35,7 @@ dnf makecache
 - 首次使用的时候先要如下进行依赖安装及脚本安装，前提是git已经安装好了
 
 ```base
-cd $HOME/downloads/mirrors-repolist/mirrors-repolists-master && chmod +x ./sh/autoRepoGit.sh
+cd $HOME/downloads/mirrors-repolist/cn && chmod +x ./sh/autoRepoGit.sh
 ./sh/autoRepoGit.sh in_bef && ./sh/autoRepoGit.sh install
 
 ```

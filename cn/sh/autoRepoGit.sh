@@ -36,11 +36,11 @@ startOnce() {
        echo "$SERVICE is Succeed!"
        exit
    fi
-   echo $RCOPY_PATH 
-    rm -rf $DL_PATH/* 
+   echo $RCOPY_PATH >logs.txt
+    rm -rf $DL_PATH/* >logs.txt
     cd $DL_PATH 
-    git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git 
-    cp -r $RCOPY_PATH/*.repo $REPO_DIR 
+    git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git >logs.txt
+    cp -r $RCOPY_PATH/*.repo $REPO_DIR >logs.txt
     dnf makecache
    exit
 }
@@ -63,7 +63,7 @@ install_unit() {
     mkdir -p $HOME/downloads
     mkdir -p $HOME/backupcd 
     touch $HOME/backupcd/logs.txt 
-    cd $HOME/downloads/mirrors-repolist/mirrors-repolists-master/sh/ 
+    cd $HOME/downloads/mirrors-repolist/cn/sh/ 
 
    cp -r  ./autoRepoGit.sh /usr/bin/autoRepoGit 
    chmod +x /usr/bin/autoRepoGit 
