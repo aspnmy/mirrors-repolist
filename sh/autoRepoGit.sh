@@ -61,6 +61,17 @@ install_unit() {
     mkdir -p $HOMME/tmp/backup
    cp -r -y ./mirrors-repolist/sh/autoRepoGit.sh /usr/bin/autoRepoGit
    chmod +x /usr/bin/autoRepoGit
+   dnf -y install crontabs
+   systemctl enable crond
+   systemctl start crond
+   echo "$SERVICE is Succeed!"
+   exit
+}
+
+install_bef() {
+    # 安装依赖程序
+    # 默认脚本路径在 ./mirrors-repolist/sh/autoRepoGit.sh
+   dnf -y install crontabs
    systemctl enable crond
    systemctl start crond
    echo "$SERVICE is Succeed!"
@@ -97,8 +108,11 @@ case "$1" in
        ;;   
    set_crontab)
        set_crontab_mouth
-       ;;        
+       ;;  
+    in_bef)
+       install_bef
+       ;;          
    *)
-       echo  $"Usage: $0 {startOnce(更新repo一次)|backup(备份repo)|install(安装脚本到系统目录)|set_crontab(设置定时任务为每月1号)}"
+       echo  $"Usage: $0 {in_bef(安装脚本依赖)|start(更新repo一次)|backup(备份repo)|install(安装脚本到系统目录)|set_crontab(设置定时任务为每月1号)}"
      
 esac
