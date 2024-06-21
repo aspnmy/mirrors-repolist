@@ -1,4 +1,4 @@
-#[TOC]
+@[TOC]
 # 如何优雅的换国内源？
 - 由于国内源的一些历史问题，所以有时候经常会出现换源异常问题，所以这个项目存在的意义就是，缓存一批常用的repo国内源，定期更新，使用很easy，只需要git下来，挪到指定区域即可。
 # git：https://gitcode.com/aspnmy/mirrors-repolist.git
