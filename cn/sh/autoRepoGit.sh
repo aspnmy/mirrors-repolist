@@ -21,7 +21,7 @@ RCOPY_PATH="$DL_PATH/mirrors-repolist/cn/repolists/$Barce_VER"
 SERVICE="autoRepoGit"
 #$REPO_DIR 就是 /etc/yum.repos.d/目录
 REPO_DIR="/etc/yum.repos.d"
-BACK_DIR="$HOME/backup"
+BACK_DIR="$HOME/backupcd"
  
 
 ME=`whoami`
