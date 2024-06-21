@@ -10,6 +10,7 @@ git clone https://gitcode.com/aspnmy/mirrors-repolist.git
 
 ```
 - 2、备份官方源并清空
+
 ```bash
 mkdir -p $HOMME/tmp/backup
 cp -r /etc/yum.repos.d/*.repo $HOMME/tmp/backup
@@ -19,6 +20,7 @@ rm -rf /etc/yum.repos.d/*.repo
 
 - 3、拷贝需要的repo文件到/etc/yum.repos.d/，并重建缓存
     比如需要项目中的centos-9-stream下全部常用repo，就可以用下面代码拷贝进去
+
 ```base
 mkdir -p $HOMME/tmp/backup
 cp -r $HOMME/tmp/downloads/mirrors-repolist/aliyun/centos/9-stream/*.repo /etc/yum.repos.d

@@ -57,7 +57,8 @@ back_repo() {
 install_unit() {
     # 安装脚本到系统目录下
     # 默认脚本路径在 ./mirrors-repolist/sh/autoRepoGit.sh
- 
+    mkdir -p $HOMME/tmp/downloads
+    mkdir -p $HOMME/tmp/backup
    cp -r -y ./mirrors-repolist/sh/autoRepoGit.sh /usr/bin/autoRepoGit
    chmod +x /usr/bin/autoRepoGit
    systemctl enable crond
