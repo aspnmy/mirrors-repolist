@@ -38,7 +38,8 @@ startOnce() {
     cd $DL_PATH 
     git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git  
     cp -r $RCOPY_PATH/*.repo $REPO_DIR  
-    dnf makecacheecho "$SERVICE is Succeed!"
+    dnf makecache 
+    echo "$SERVICE is Succeed!"
 
    exit
 }
