@@ -1,0 +1,25 @@
+[Cnet-BaseOS]
+name=Cnet CentOS Stream $releasever - BaseOS
+#https://mirrors.nas.t2be.cn/centos-stream/9-stream/BaseOS
+baseurl=https://mirrors.nas.t2be.cn/centos-stream/$stream/BaseOS/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+gpgcheck=1
+repo_gpgcheck=0
+metadata_expire=6h
+countme=1
+enabled=1
+
+
+
+[Cnet-AppStream]
+name=Cnet CentOS Stream $releasever - AppStream
+baseurl=https://mirrors.nas.t2be.cn/centos-stream/$stream/AppStream/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+gpgcheck=1
+repo_gpgcheck=0
+metadata_expire=6h
+countme=1
+enabled=1
+
+
+
