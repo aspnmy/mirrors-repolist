@@ -33,7 +33,7 @@ fi
  
 startOnce() {
    if pgrep -u $USERNAME -f $SERVICE > /dev/null ; then
-       echo "$SERVICE is already running!"
+       echo "$SERVICE is Succeed!"
        exit
    fi
     rm -rf $DL_PATH/*
