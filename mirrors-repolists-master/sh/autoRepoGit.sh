@@ -15,12 +15,12 @@ USERNAME="root"
 SCNAME="autoRepoGit"
 # $Barce_VER 代表git目录中需要下载的repo文件的类别路径，用变量就方便进行路径切换，这里假设拉取阿里云-centos-9-stream的repo文件
 Barce_VER="aliyun/centos/9-stream"
-DL_PATH="$HOMME/tmp/downloads"
+DL_PATH="$HOME/downloads"
 RCOPY_PATH="$DL_PATH/mirrors-repolist/$Barce_VER"
 SERVICE="autoRepoGit"
 #$REPO_DIR 就是 /etc/yum.repos.d/目录
 REPO_DIR="/etc/yum.repos.d"
-BACK_DIR="$HOMME/tmp/backup"
+BACK_DIR="$HOME/backup"
  
 
 ME=`whoami`
@@ -35,7 +35,7 @@ startOnce() {
        echo "$SERVICE is already running!"
        exit
    fi
-    rm -rf $DL_PATH
+    rm -rf $DL_PATH/*
     git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git $DL_PATH
     cp -r -y $RCOPY_PATH/*.repo $REPO_DIR
     dnf makecache
@@ -50,15 +50,15 @@ back_repo() {
        exit
    fi
  
-   cp -r -y $REPO_DIR/*.repo $BACK_DIR
+   cp -r $REPO_DIR/*.repo $BACK_DIR
    exit
 }
  
 install_unit() {
     # 安装脚本到系统目录下
     # 默认脚本路径在 ./mirrors-repolist/sh/autoRepoGit.sh
-    mkdir -p $HOMME/tmp/downloads
-    mkdir -p $HOMME/tmp/backup
+    mkdir -p $HOME/downloads
+    mkdir -p $HOME/backup
    cp -r -y ./mirrors-repolist/sh/autoRepoGit.sh /usr/bin/autoRepoGit
    chmod +x /usr/bin/autoRepoGit
    dnf -y install crontabs
