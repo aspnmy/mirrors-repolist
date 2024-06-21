@@ -11,7 +11,9 @@
 
 ```
 cd /etc/yum.repos.d
-wget 
+wget https://gitcode.com/aspnmy/mirrors-repolist/blob/main/mirrors-repolist/aliyun/centos/8-stream/centos-8-stearm.repo
 yum makecache
 
 ```
+
+- 好运
