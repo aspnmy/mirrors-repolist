@@ -32,26 +32,19 @@ if [ $ME != $USERNAME ] ; then
 fi
  
 startOnce() {
-   if pgrep -u $USERNAME -f $SERVICE > /dev/null ; then
-       echo "$SERVICE is Succeed!"
-       exit
-   fi
+
    echo $RCOPY_PATH >logs.txt
     rm -rf $DL_PATH/* >logs.txt
     cd $DL_PATH 
     git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git >logs.txt
     cp -r $RCOPY_PATH/*.repo $REPO_DIR >logs.txt
-    dnf makecache
+    dnf makecacheecho "$SERVICE is Succeed!"
+
    exit
 }
  
 back_repo() {
-   if pgrep -u $USERNAME -f $SERVICE > /dev/null ; then
-       echo "back_repoiing $SERVICE "
-   else
-       echo "$SERVICE is not running!"
-       exit
-   fi
+
  
    cp -r $REPO_DIR/*.repo $BACK_DIR
    exit
