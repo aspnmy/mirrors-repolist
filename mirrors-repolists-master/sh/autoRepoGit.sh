@@ -39,9 +39,9 @@ startOnce() {
    echo $RCOPY_PATH
     rm -rf $DL_PATH/*
     cd $DL_PATH
-    git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git
-    cp -r $RCOPY_PATH/*.repo $REPO_DIR
-    dnf makecache
+    #git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git
+    #cp -r $RCOPY_PATH/*.repo $REPO_DIR
+    #dnf makecache
    exit
 }
  
