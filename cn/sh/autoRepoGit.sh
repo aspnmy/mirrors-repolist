@@ -33,11 +33,11 @@ fi
  
 startOnce() {
 
-   echo $RCOPY_PATH >logs.txt
-    rm -rf $DL_PATH/* >logs.txt
+   echo $RCOPY_PATH 
+    rm -rf $DL_PATH/* 
     cd $DL_PATH 
-    git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git >logs.txt
-    cp -r $RCOPY_PATH/*.repo $REPO_DIR >logs.txt
+    git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git  
+    cp -r $RCOPY_PATH/*.repo $REPO_DIR  
     dnf makecacheecho "$SERVICE is Succeed!"
 
    exit
