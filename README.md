@@ -45,7 +45,7 @@ cd $HOME/downloads/mirrors-repolist/cn && chmod +x ./sh/autoRepoGit.sh
 
 # 安装依赖
 autoRepoGit in_bef
-# 安装脚本工具到系统目录 （如果不使用install命令进行安装，就需要以./mirrors-repolist/sh/autoRepoGit.sh start 的形式来启动）
+# 安装脚本工具到系统目录 （如果不使用install命令进行安装，就需要以./sh/autoRepoGit.sh start 的形式来启动）
 autoRepoGit install
 # 自动更新一次repo  
 autoRepoGit start
@@ -61,8 +61,9 @@ autoRepoGit set_crontab
 
 - 主要保存一些常用镜像源的repo文件，方便快速换源
 - 使用wget命令下载的对应区域即可
-mirrors-repolists-master
-    ├─mirrors-repolist
+mirrors-repolist
+└─cn
+    ├─repolists
     │  └─aliyun
     │      └─centos
     │          ├─10-stream
