@@ -5,15 +5,15 @@
 # 使用说明
 - 1、首先下载项目
 ```bash
-mkdir -p $HOMME/tmp/downloads
+mkdir -p $HOME/downloads
 git clone https://gitcode.com/aspnmy/mirrors-repolist.git
 
 ```
 - 2、备份官方源并清空
 
 ```bash
-mkdir -p $HOMME/tmp/backup
-cp -r /etc/yum.repos.d/*.repo $HOMME/tmp/backup
+mkdir -p $HOME/tmp/backup
+cp -r /etc/yum.repos.d/*.repo $HOME/backup
 rm -rf /etc/yum.repos.d/*.repo 
 
 ```
@@ -22,8 +22,8 @@ rm -rf /etc/yum.repos.d/*.repo
     比如需要项目中的centos-9-stream下全部常用repo，就可以用下面代码拷贝进去
 
 ```base
-mkdir -p $HOMME/tmp/backup
-cp -r $HOMME/tmp/downloads/mirrors-repolist/aliyun/centos/9-stream/*.repo /etc/yum.repos.d
+mkdir -p $HOME/backupcd
+cp -rf $HOME/downloads/mirrors-repolist/cn/repolists/aliyun/centos/9-stream/*.repo /etc/yum.repos.d
 dnf makecache
 
 ```
