@@ -35,7 +35,7 @@ startOnce() {
        echo "$SERVICE is already running!"
        exit
    fi
-    
+    rm -rf $DL_PATH
     git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git $DL_PATH
     cp -r -y $RCOPY_PATH/*.repo $REPO_DIR
     dnf makecache
