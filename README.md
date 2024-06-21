@@ -6,7 +6,7 @@
 # 使用说明
 - 1、首先下载项目
 ```bash
-mkdir -p $HOME/downloads
+mkdir -p $HOME/downloads && cd $HOME/downloads
 git clone https://gitcode.com/aspnmy/mirrors-repolist.git
 
 ```
