@@ -36,6 +36,7 @@ startOnce() {
        echo "$SERVICE is Succeed!"
        exit
    fi
+   echo $RCOPY_PATH
     rm -rf $DL_PATH/*
     cd $DL_PATH
     git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git
