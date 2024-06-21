@@ -32,8 +32,19 @@ dnf makecache
 - 为什么要定期换源呢，因为某些原因国内的镜像源可能会有访问异常，所以git上的数据会有变动
 - 假设git到本地的目录是$HOMME/tmp/downloads，是不变的，那么写一个简单sh脚本，定期git到本地，然后再拷贝到/etc/yum.repos.d/目录下就能无缝衔接源了，可以用定时组件操作。
 - 脚本工具在git项目的./mirrors-repolist/sh/下
+- 首次使用的时候先要如下进行依赖安装及脚本安装，前提是git已经安装好了
 
 ```base
+chmod +x ./mirrors-repolist/sh/autoRepoGit.sh
+./mirrors-repolist/sh/autoRepoGit.sh in_bef
+./mirrors-repolist/sh/autoRepoGit.sh install
+```
+
+上面的命令执行完成以后，就可以像下面这样进行操作了，简化步骤
+```base
+
+# 安装依赖
+autoRepoGit in_bef
 # 安装脚本工具到系统目录 （如果不使用install命令进行安装，就需要以./mirrors-repolist/sh/autoRepoGit.sh start 的形式来启动）
 autoRepoGit install
 # 自动更新一次repo  
