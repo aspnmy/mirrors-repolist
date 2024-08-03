@@ -54,3 +54,13 @@ gpgcheck=1
 repo_gpgcheck=0
 metadata_expire=6h
 enabled=1
+
+[extras]
+name=CentOS Stream 8-stream - Extras
+baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/extras/$basearch/os/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+gpgcheck=1
+repo_gpgcheck=0
+metadata_expire=6h
+countme=1
+enabled=1
