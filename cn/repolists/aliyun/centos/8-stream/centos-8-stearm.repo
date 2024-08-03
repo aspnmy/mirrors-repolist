@@ -16,11 +16,11 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
 metadata_expire=6h
-enabled=1
+enabled=0
 
 [baseos-source]
 name=CentOS Stream 8-stream - BaseOS - Source
-baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/BaseOS/source/tree/
+baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/BaseOS/Source/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
@@ -44,17 +44,13 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
 metadata_expire=6h
-enabled=1
+enabled=0
 
 [appstream-source]
 name=CentOS Stream 8-stream - AppStream - Source
-baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/AppStream/$basearch/debug/tree/
+baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/AppStream/Source/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
 metadata_expire=6h
 enabled=1
-
-
-
-
