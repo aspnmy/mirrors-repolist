@@ -1,7 +1,7 @@
 [baseos]
-name=CentOS Stream 8-stearm - BaseOS
+name=CentOS Stream 8-stream - BaseOS
 #centos-vault/8-stream
-baseurl=https://mirrors.aliyun.com/centos-vault/8-stearm/BaseOS/$basearch/os/
+baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/BaseOS/$basearch/os/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
@@ -10,8 +10,8 @@ countme=1
 enabled=1
 
 [baseos-debug]
-name=CentOS Stream 8-stearm - BaseOS - Debug
-baseurl=https://mirrors.aliyun.com/centos-vault/8-stearm/BaseOS/$basearch/debug/tree/
+name=CentOS Stream 8-stream - BaseOS - Debug
+baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/BaseOS/$basearch/debug/tree/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
@@ -19,8 +19,8 @@ metadata_expire=6h
 enabled=1
 
 [baseos-source]
-name=CentOS Stream 8-stearm - BaseOS - Source
-baseurl=https://mirrors.aliyun.com/centos-vault/8-stearm/BaseOS/source/tree/
+name=CentOS Stream 8-stream - BaseOS - Source
+baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/BaseOS/source/tree/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
@@ -28,8 +28,8 @@ metadata_expire=6h
 enabled=1
 
 [appstream]
-name=CentOS Stream 8-stearm - AppStream
-baseurl=https://mirrors.aliyun.com/centos-vault/8-stearm/AppStream/$basearch/os/
+name=CentOS Stream 8-stream - AppStream
+baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/AppStream/$basearch/os/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
@@ -38,8 +38,8 @@ countme=1
 enabled=1
 
 [appstream-debug]
-name=CentOS Stream 8-stearm - AppStream - Debug
-baseurl=https://mirrors.aliyun.com/centos-vault/8-stearm/AppStream/$basearch/debug/tree/
+name=CentOS Stream 8-stream - AppStream - Debug
+baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/AppStream/$basearch/debug/tree/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
@@ -47,8 +47,8 @@ metadata_expire=6h
 enabled=1
 
 [appstream-source]
-name=CentOS Stream 8-stearm - AppStream - Source
-baseurl=https://mirrors.aliyun.com/centos-vault/8-stearm/AppStream/$basearch/debug/tree/
+name=CentOS Stream 8-stream - AppStream - Source
+baseurl=https://mirrors.aliyun.com/centos-vault/8-stream/AppStream/$basearch/debug/tree/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
 gpgcheck=1
 repo_gpgcheck=0
