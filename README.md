@@ -2,7 +2,17 @@
 # 如何优雅的换国内源？
 - 由于国内源的一些历史问题，所以有时候经常会出现换源异常问题，所以这个项目存在的意义就是，缓存一批常用的repo国内源，定期更新，使用很easy，只需要git下来，挪到指定区域即可。
 # git：https://gitcode.com/aspnmy/mirrors-repolist.git
-# 更新时间：20240622 Msg：更新自动脚本工具
+# 更新时间：20240826 Msg：更新docker与podman加速镜像源
+
+# 更新说明：
+- 更新docker与podman加速镜像源
+- 更新源保存在 repolosts/docker repolosts/podman 中，下载更新源覆盖对应的文件即可
+- 更新脚本命令 autoRepoGit up_podman_r  如需要更新docker镜像源只需要改对应的参数变量到项目中的docker镜像源文件即可
+
+# 更新源加速查询网址，不想添加更新源的，可以使用查询网址，查询可用的加速源。
+- https://getimgurl.t2be.cn/
+
+
 # 使用说明
 - 1、首先下载项目
 ```bash

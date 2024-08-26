@@ -1,0 +1,18 @@
+{
+    "data-root": "/home",
+    "bip": "",
+    "log-level": "warn",
+    "iptables": true,
+    "api-cors-header": "*",
+    "hosts": [
+        "unix:///var/run/docker.sock",
+        "tcp://127.0.0.1:9375"
+    ],
+    "registry-mirrors": [
+        "https://dockerproxy.cn",
+        "https://dockerpull.com",
+        "https://docker.nju.edu.cn",
+        "https://drrpull.shdrr.org",
+        "https://docker.shdrr.org"
+    ]
+}

@@ -1,11 +1,12 @@
 #!/bin/bash
 # 自动更新一次repo  autoRepoGit start
 # 自动备份repo文件到备份目录 autoRepoGit backup
+# 自动代理对docker和podman更新源的更新 autoRepoGit up_podman_r
 # 安装脚本工具到系统目录 autoRepoGit install
 # 设置定时任务为每月第一天执行 autoRepoGit set_crontab
 # git：https://gitcode.com/aspnmy/mirrors-repolist.git
 # 作者：aspnmy（support@e2bank.cn）
-# 版本更新：20240622
+# 版本更新：20240826
 
 
 # 只支持root用户操作，如果需要使用非root用户需要脚本每个命令中都加上sudo 不然执行是不成功的
@@ -15,22 +16,27 @@ USERNAME="root"
 SCNAME="autoRepoGit"
 # $Barce_VER 代表git目录中需要下载的repo文件的类别路径，用变量就方便进行路径切换，这里假设拉取阿里云-centos-9-stream的repo文件
 Barce_VER="aliyun/centos/9-stream"
+# $Podman_VER 代表git目录中需要下载的docker更新源的类别路径，用变量就方便进行路径切换，这里假设拉取podman的更新源
+Podman_VER="podman/etc/containers/registries.conf"
 DL_PATH="$HOME/downloads"
 #$HOME/downloads/mirrors-repolist/cn/repolists/aliyun/centos/9-stream/*.repo
 RCOPY_PATH="$DL_PATH/mirrors-repolist/cn/repolists/$Barce_VER"
+RCOPY_PODMAN_PATH="$DL_PATH/mirrors-repolist/cn/repolists/$Podman_VER"
+
 SERVICE="autoRepoGit"
 #$REPO_DIR 就是 /etc/yum.repos.d/目录
 REPO_DIR="/etc/yum.repos.d"
 BACK_DIR=" $HOME/backup"
- 
+#$Podman_DIR 就是 podman更新源配置文件/etc/containers/目录
+Podman_DIR="/etc/containers/"
 
 ME=`whoami`
- 
+
 if [ $ME != $USERNAME ] ; then
    echo "Please run the $USERNAME user."
    exit
 fi
- 
+
 startOnce() {
 
    echo $RCOPY_PATH 
@@ -44,6 +50,21 @@ startOnce() {
    exit
 }
  
+up_podman_r() {
+
+   echo $RCOPY_PODMAN_PATH 
+    rm -rf $DL_PATH/mirrors-repolist 
+    cd $DL_PATH 
+    git clone -q https://gitcode.com/aspnmy/mirrors-repolist.git  
+    cp -r $RCOPY_PATH/*.repo $REPO_DIR  
+    dnf makecache 
+    echo "$SERVICE is Succeed!"
+
+   exit
+}
+
+
+
 back_repo() {
 
  
@@ -100,6 +121,9 @@ case "$1" in
    start)
        startOnce
        ;;
+   upodman)
+       up_podman_r
+       ;;
    backup)
        back_repo
        ;;
@@ -113,6 +137,6 @@ case "$1" in
        install_bef
        ;;          
    *)
-       echo  $"Usage: $0 {in_bef(安装脚本依赖)|start(更新repo一次)|backup(备份repo)|install(安装脚本到系统目录)|set_crontab(设置定时任务为每月1号)}"
+       echo  $"Usage: $0 {upodman(更新podman镜像源)|in_bef(安装脚本依赖)|start(更新repo一次)|backup(备份repo)|install(安装脚本到系统目录)|set_crontab(设置定时任务为每月1号)}"
      
 esac
